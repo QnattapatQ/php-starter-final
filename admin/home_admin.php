@@ -1,5 +1,12 @@
 <?php 
     include('sidebar.php');
+    include('../connectdb.php');
+
+    $sql = "SELECT * FROM users WHERE role_id = 1"; // แสดงจำนวน
+    $result = mysqli_query($conn, $sql);
+
+    $row = mysqli_num_rows($result);
+
 ?>
 
 <!DOCTYPE html>
@@ -8,14 +15,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="stylesheet" href="./css/home_admin.css">
 </head>
 <body>
     <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Overview</li>
+                <li class="breadcrumb-item"><a href="#">หน้าแรก</a></li>
+                <li class="breadcrumb-item active" aria-current="page">ภาพรวม</li>
             </ol>
         </nav>
         <h1 class="h2">Dashboard</h1>
@@ -23,13 +31,11 @@
         <div class="row my-4">
             <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
                 <div class="card">
-                    <h5 class="card-header">Customers</h5>
+                    <h5 class="card-header text-center">ผู้ใช้ที่ทำการสมัครสมาชิก</h5>
                     <div class="card-body">
-                        <h5 class="card-title">345k</h5>
-                        <p class="card-text">Feb 1 - Apr 1, United States</p>
-                        <p class="card-text text-success">18.2% increase since last month</p>
+                        <h5 class="card-title text-center"><?=$row ?></h5>
                     </div>
-                    </div>
+                </div>
             </div>
             <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
                 <div class="card">
