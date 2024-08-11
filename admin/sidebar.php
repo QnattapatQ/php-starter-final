@@ -71,7 +71,7 @@
                         </button>
                     <?php else: ?>
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                            Login
+                            <a class="text-white" href="../user/login.php">Login</a>
                         </button>
                     <?php endif; ?>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -80,7 +80,7 @@
                     <?php if (isset($_SESSION['username'])): ?>
                         <li><a class="dropdown-item" href="../user/logout.php">Sign out</a></li>
                     <?php else: ?>
-                        <li><a class="dropdown-item" href="login.php">Sign in</a></li>
+                        <li><a class="dropdown-item" href="../user/login.php">Sign in</a></li>
                     <?php endif; ?>
                 </ul>
               </div>
