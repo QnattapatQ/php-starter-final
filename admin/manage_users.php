@@ -58,7 +58,7 @@
                                                 <td>
                                                     <div>
                                                         <button class="btn btn-danger" onclick="confirmDelete(<?php echo $row['id']; ?>)">ลบ</button>
-                                                        <a class="btn btn-success" href="edit_user.php">แก้ไข</a>
+                                                        <a class="btn btn-success" href="edit_user.php?userId=<?php echo $row['id']; ?>">แก้ไข</a>
                                                     </div>
                                                 </td>
                                             </tr>
